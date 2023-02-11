@@ -1,0 +1,15 @@
+install bootstrap using
+	"npm install bootstrap" and
+	"ng add @ng-bootstrap/ng-bootstrap"
+  For bootstrap use "NgbModalModule" in app.module.ts
+
+
+install ngx owl carousel using
+	"npm i ngx-owl-carousel-o"
+  In app.module.ts add "BrowserAnimationsModule"
+  In which module use it, add "NgbCarouselModule,NgIf,CarouselModule"
+
+
+install ngx image zoom using
+	"npm i ngx-image-zoom"
+  In which module use it, add "NgxImageZoomModule"

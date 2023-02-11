@@ -1,0 +1,31 @@
+<div class="container mt-3">
+    <h2 class="text-center">Product List</h2>
+    <!-- <p class="text-center text-danger">{{deleteMsg}}</p> -->
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">image</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Color</th>
+            <th scope="col">Category</th>
+            <th scope="col">Description</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of productList">
+            <td  class="align-middle"><img class="img-fluid productImg"  src="{{item.image}}"></td>
+            <td  class="align-middle">{{item.name}}</td>
+            <td  class="align-middle">{{item.price}}</td>
+            <td  class="align-middle">{{item.color}}</td>
+            <td  class="align-middle">{{item.category}}</td>
+            <td  class="align-middle">{{item.description}}</td>
+            <td  class="align-middle">
+              <i class="fa fa-trash fa-2x deleteIcon" aria-hidden="true" (click)="deleteProduct(item.id)"></i>
+              <a routerLink="/seller-update/{{item.id}}"><i class="fa fa-edit fa-2x editIcon" aria-hidden="true"></i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>

@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <a *ngFor="let item of serchResult" class="col-md-4" routerLink="/details/{{item.id}}">
+            <div class="card my-3">
+                <div class="row g-0 d-flex align-items-center">
+                    <div class="col-md-4 text-center">
+                        <img src="{{item.image}}" class="img-fluid rounded-start productImg">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{item.name}}</h5>
+                            <h6 class="card-title">{{item.price}}</h6>
+                            <p class="card-text">{{item.description}}</p>
+                            <p class="card-text">Category : {{item.category}}</p>
+                            <p class="card-text"><small class="text-muted">Color : {{item.color}}</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    
+</div>

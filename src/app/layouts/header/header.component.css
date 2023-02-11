@@ -1,0 +1,5 @@
+.serchResult .list-group{
+    position: absolute;
+    z-index: 10;
+    width: 200px;
+}

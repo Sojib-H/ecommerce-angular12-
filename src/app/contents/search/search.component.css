@@ -1,0 +1,11 @@
+img.img-fluid.rounded-start.productImg {
+    height: 150px;
+    padding: 10px;
+}
+
+p.card-text {
+    line-height: 20px;
+}
+a{
+    color: #000000;
+}

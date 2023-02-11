@@ -1,0 +1,16 @@
+img.img-fluid.productImg {
+    height: 100px;
+}
+
+table th,td{
+    text-align: center;
+}
+
+i.fa.fa-trash.fa-2x.deleteIcon {
+    cursor: pointer;
+    color: red;
+}
+
+.editIcon{
+    margin-left: 15px;
+}

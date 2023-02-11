@@ -1,0 +1,41 @@
+<div class="container">
+  <owl-carousel-o [options]="customOptions">
+
+    <ng-container *ngFor="let slide of latestProduct">
+      <ng-template carouselSlide>
+        <a routerLink="/details/{{slide.id}}" class="mainSliderContent d-flex justify-content-center">
+          <img class="sliderImg" [src]="slide.image">
+          <div class="text-center sliderContent">
+            <p class="contentTxt">{{slide.name |titlecase}}</p>
+            <p class="contentDes">{{slide.description |titlecase}}</p>
+          </div>
+        </a>
+      </ng-template>
+    </ng-container>
+
+  </owl-carousel-o>
+
+  <section class="productList mb-3">
+    <div>
+      <h1>Trending Products</h1>
+      <hr>
+      <div class="row">
+        <div *ngFor="let item of AllProduct" class="col-md-3">
+          <div class="card mt-2">
+            <img src="{{item.image}}" class="card-img-top productImg" >
+            <div class="card-body">
+              <h5 class="card-title">{{item.name |titlecase}}</h5>
+              <h6 class="card-title">Price: {{item.price |titlecase}}</h6>
+              <p class="card-text">{{item.description}}</p>
+              <p class="card-text">Color: {{item.color}}</p>
+              <div class="d-flex justify-content-between">
+                <a routerLink="/details/{{item.id}}" class="btn btn-primary btn-sm"><i class="fa-sharp fa-solid fa-eye"></i> view Details</a>
+                <a href="#" class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i> Add to cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

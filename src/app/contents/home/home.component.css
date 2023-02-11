@@ -1,0 +1,30 @@
+img.sliderImg {
+    height: 90vh;
+    padding: 10px;
+}
+p.contentDes {
+    line-height: 0px;
+}
+
+.sliderContent {
+    position: absolute;
+    bottom: 5%;
+    width: 95%;
+    background-color: #28272759;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+
+p.contentDes, p.contentTxt{
+    font-size: 30px;
+    color: #ffffff;
+}
+
+img.card-img-top.productImg {
+    padding: 10px;
+    height: 200px;
+}
+
+p.card-text {
+    line-height: 8px;
+}

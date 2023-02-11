@@ -1,0 +1,83 @@
+<div class="container">
+    <div *ngIf="productData" class="row mt-3 d-flex align-items-center">
+        <div class="col-md-6">
+            <div class="productImg text-center">
+                <lib-ngx-image-zoom [thumbImage]='productData.image' [fullImage]='productData.image' [magnification]="1"
+                    [enableScrollZoom]="true" [enableLens]="true" [lensWidth]="200" [lensHeight]="200">
+                </lib-ngx-image-zoom>
+                <!-- <img src="{{productData.image}}"> -->
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="productContent">
+                <h4>{{productData.name |titlecase}}</h4>
+                <h5>Price : {{productData.price}}</h5>
+                <p>Color : {{productData.color | titlecase}}</p>
+                <p>Category : {{productData.category | titlecase}}</p>
+                <p>{{productData.description}}</p>
+                <div class="productBtn mb-3">
+                    <button class="btn btn-primary addToCart" (click)="openVerticallyCentered(content)">
+                        Add to Cart
+                    </button>
+                    <button class="btn btn-primary buyNow">Buy Now</button>
+                </div>
+                <div class="quantity-group">
+                    <button>-</button>
+                    <input class="text-center quantityInput" type="text" value="1">
+                    <button>+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- signup / registration modal -->
+<ng-template #content let-modal>
+    <ng-container *ngIf="ShowSignUp">
+        <div class="modal-header">
+            <h4 class="modal-title">Create your Ecommerce Account</h4><br>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group mb-3">
+                    <label for="email">Enter Email address</label>
+                    <input type="email" name="email" class="form-control" id="email" placeholder="Enter email">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="phone">Enter Phone Number</label>
+                    <input type="phone" name="phone" class="form-control" id="phone" placeholder="Enter phone">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="password" id="password"
+                        placeholder="Enter password">
+                </div>
+                <p>Already have an account? <span class="clickBtn" (click)="Login()">Click Here to Login</span> </p>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="!ShowSignUp">
+        <div class="modal-header">
+            <h4 class="modal-title">Login your account</h4><br>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group mb-3">
+                    <label for="email">Enter Email address</label>
+                    <input type="email" name="email" class="form-control" id="email" placeholder="Enter email">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="password" id="password"
+                        placeholder="Enter password">
+                </div>
+                <p>Don't have an account? <span class="clickBtn" (click)="Register()">Click Here to Register</span> </p>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </ng-container>
+</ng-template>
+<!-- //signup / registration modal -->

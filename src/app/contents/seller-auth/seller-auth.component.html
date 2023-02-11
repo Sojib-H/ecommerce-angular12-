@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="seller-signup" *ngIf="!showLogin">
+    <h1 class="text-center my-3">Seller Sign Up</h1>
+    <form #SellerSignUp="ngForm" class="form-horizontal" (ngSubmit)="signUp(SellerSignUp.value)">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" name="name" class="form-control" placeholder="Enter your name" ngModel>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="text" name="password" class="form-control" placeholder="Enter your password" ngModel>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" name="email" class="form-control" placeholder="Enter your email" ngModel>
+      </div>
+      <div class="mb-3">
+        <button type="submit" class="btn btn-primary form-control">Sign Up</button>
+        <p class="clickBtnTxt mt-2">Already have an account? <span class="ClickHerebtn text-primary" (click)="OpenLogin()">Click Here to Login</span></p>
+      </div>
+    </form>
+  </div>
+  <div class="seller-login" *ngIf="showLogin">
+    <h1 class="text-center my-3">Seller Login</h1>
+    <p class="text-center text-danger">{{logginError}}</p>
+    <form #Sellerlogin="ngForm" class="form-horizontal" (ngSubmit)="login(Sellerlogin.value)">
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" name="email" class="form-control" placeholder="Enter your email" ngModel>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="text" name="password" class="form-control" placeholder="Enter your password" ngModel>
+      </div>
+      <div class="mb-3">
+        <button type="submit" class="btn btn-primary form-control">Login</button>
+        <p class="clickBtnTxt mt-2">Don't have an account? <span class="ClickHerebtn text-primary" (click)="OpenSignUp()">Click Here to Sign Up</span></p>
+      </div>
+    </form>
+  </div>
+</div>

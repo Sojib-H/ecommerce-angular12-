@@ -1,0 +1,30 @@
+.productImg img{
+    height: 350px;
+}
+
+.productContent p{
+    line-height: 10px;
+}
+
+.productBtn .addToCart{
+    margin-right: 40px;
+}
+
+.productBtn .btn{
+    width: 110px;
+}
+
+.quantity-group input{
+    width: 215px;
+}
+
+.clickBtn:hover{
+    cursor: pointer;
+    color:blue;
+}
+
+@media (max-width: 767px) {
+   .productContent {
+            text-align: center;
+     } 
+  }
