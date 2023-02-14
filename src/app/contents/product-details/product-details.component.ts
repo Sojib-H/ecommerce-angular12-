@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { product } from 'src/app/interface/data-type';
@@ -32,6 +33,23 @@ export class ProductDetailsComponent implements OnInit {
   }
   Register() {
     this.ShowSignUp = true;
+  }
+
+  form = {
+    name: '',
+    email: '',
+    phone: '',
+    password: '',
+    confirmPassword: '',
+    acceptTerms: false,
+  };
+
+  onSubmit(): void {
+    console.log(JSON.stringify(this.form, null, 2));
+  }
+
+  onReset(form: NgForm): void {
+    form.reset();
   }
 
 }

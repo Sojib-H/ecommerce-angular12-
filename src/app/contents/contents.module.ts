@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { TestComponent } from './test/test.component';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
+import { MatchPasswordDirective } from './directives/match-password.directive';
 
 
 
@@ -27,7 +28,8 @@ import { NgxImageZoomModule } from 'ngx-image-zoom';
     SellerAuthComponent,
     SellerHomeComponent,
     SellerUpdateComponent,
-    TestComponent
+    TestComponent,
+    MatchPasswordDirective
   ],
   imports: [
     CommonModule,
