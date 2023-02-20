@@ -1,0 +1,101 @@
+{
+  "seller": [
+    {
+      "name": "Sojib",
+      "password": "123456",
+      "email": "dsl@gmail.com",
+      "id": 1
+    },
+    {
+      "name": "user2",
+      "password": "demo123",
+      "email": "ashik@gmail.com",
+      "id": 2
+    }
+  ],
+  "products": [
+    {
+      "name": "iphone 12",
+      "price": "100000",
+      "color": "black",
+      "category": "Mobile Phone",
+      "description": "this is an android phone1",
+      "image": "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-12-2.jpg",
+      "id": 1
+    },
+    {
+      "name": "reading table",
+      "price": "12000",
+      "color": "primary",
+      "category": "furniture",
+      "description": "this is  a furniture",
+      "image": "https://bene.com/pics/office-furniture/executive/bene/ports/ports-table/PORTS-table-14.jpg",
+      "id": 2
+    },
+    {
+      "name": "Chair",
+      "price": "800",
+      "color": "primary",
+      "category": "furniture",
+      "description": "this is  a furniture",
+      "image": "https://www.oakworld.co.uk/wp-content/uploads/2018/09/Alston-Oak-Dining-Chair-64334-64283.jpg",
+      "id": 3
+    },
+    {
+      "name": "Bed",
+      "price": "20000",
+      "color": "primary",
+      "category": "furniture",
+      "description": "this is  a furniture",
+      "image": "https://hatil.com/sites/default/files/styles/hatil_product_list_crop/public/Obsession-151%20.jpg?itok=wvE_20q0",
+      "id": 4
+    }
+  ],
+  "users": [
+    {
+      "name": "Sojib",
+      "email": "dsl@gmail.com",
+      "phone": "+8801952023",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "acceptTerms": true,
+      "id": 1
+    },
+    {
+      "name": "user2",
+      "email": "dsl@gmail.com",
+      "phone": "+8801952023",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "acceptTerms": true,
+      "id": 2
+    },
+    {
+      "name": "user2",
+      "email": "dsl@gmail.com",
+      "phone": "+8801952023",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "acceptTerms": true,
+      "id": 3
+    },
+    {
+      "name": "user2",
+      "email": "dsl@gmail.com",
+      "phone": "+8801952023",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "acceptTerms": true,
+      "id": 4
+    },
+    {
+      "name": "user2",
+      "email": "dsl@gmail.com",
+      "phone": "+8801952023",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "acceptTerms": true,
+      "id": 5
+    }
+  ]
+}

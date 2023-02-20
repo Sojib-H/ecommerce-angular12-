@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, NgIf } from '@angular/common';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { SearchComponent } from './search/search.component';
 import { SellerAddProductComponent } from './seller-add-product/seller-add-product.component';
@@ -15,13 +14,13 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { TestComponent } from './test/test.component';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
 import { MatchPasswordDirective } from './directives/match-password.directive';
+import { UserAuthComponent } from './user-auth/user-auth.component';
 
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    LoginComponent,
     ProductDetailsComponent,
     SearchComponent,
     SellerAddProductComponent,
@@ -29,7 +28,8 @@ import { MatchPasswordDirective } from './directives/match-password.directive';
     SellerHomeComponent,
     SellerUpdateComponent,
     TestComponent,
-    MatchPasswordDirective
+    MatchPasswordDirective,
+    UserAuthComponent
   ],
   imports: [
     CommonModule,

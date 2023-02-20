@@ -3,3 +3,7 @@
     z-index: 10;
     width: 200px;
 }
+
+.list-group-item{
+    cursor: pointer;
+}
