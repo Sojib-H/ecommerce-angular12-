@@ -15,6 +15,7 @@ export class ProductDetailsComponent implements OnInit {
 
   ShowSignUp = true;
   productData: undefined | product;
+  productQty:number=1;
   constructor(private productService: ProductService, private route: ActivatedRoute, private modalService: NgbModal) { }
 
   ngOnInit(): void {
@@ -52,4 +53,12 @@ export class ProductDetailsComponent implements OnInit {
     form.reset();
   }
 
+  handleQty(val:string){
+    if(this.productQty<20 && val==='plus'){
+      this.productQty+=1;
+    }else if(this.productQty > 1 && val==='min'){
+      this.productQty-=1;
+    }
+
+  }
 }

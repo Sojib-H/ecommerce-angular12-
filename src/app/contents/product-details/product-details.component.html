@@ -22,9 +22,9 @@
                     <button class="btn btn-primary buyNow">Buy Now</button>
                 </div>
                 <div class="quantity-group">
-                    <button>-</button>
-                    <input class="text-center quantityInput" type="text" value="1">
-                    <button>+</button>
+                    <button (click)="handleQty('min')">-</button>
+                    <input class="text-center quantityInput" type="text" value="{{productQty}}">
+                    <button (click)="handleQty('plus')">+</button>
                 </div>
             </div>
         </div>

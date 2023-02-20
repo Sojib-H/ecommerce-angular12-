@@ -1,0 +1,94 @@
+<div class="container">
+    <ng-container *ngIf="ShowSignUp">
+        <h1 class="text-center my-3">User Sign Up</h1>
+        <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" novalidate
+            [appMatchPassword]="['password', 'confirmPassword']" class="form-horizontal">
+            <div class="form-group mb-3">
+                <label for="name">Enter Name</label>
+                <input type="text" name="name" class="form-control" id="name" placeholder="Enter name"
+                    [(ngModel)]="form.name" required #name="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && name.errors }">
+                <div *ngIf="f.submitted && name.errors" class="invalid-feedback">
+                    <div *ngIf="name.errors['required']">Name is required</div>
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <label for="email">Enter Email address</label>
+                <input type="email" name="email" class="form-control" id="email" placeholder="Enter email"
+                    [(ngModel)]="form.email" required email #email="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && email.errors }">
+                <div *ngIf="f.submitted && email.errors" class="invalid-feedback">
+                    <div *ngIf="email.errors['required']">Email is required</div>
+                    <div *ngIf="email.errors['email']">Email is invalid</div>
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <label for="phone">Enter Phone Number</label>
+                <input type="phone" name="phone" class="form-control" id="phone" placeholder="Enter phone"
+                    [(ngModel)]="form.phone" required #phone="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && phone.errors }" maxlength="11">
+                <div *ngIf="f.submitted && phone.errors" class="invalid-feedback">
+                    <div *ngIf="phone.errors['required']">Phone is required</div>
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Enter password"
+                    [(ngModel)]="form.password" required minlength="6" maxlength="40" #password="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && password.errors }">
+                <div *ngIf="f.submitted && password.errors" class="invalid-feedback">
+                    <div *ngIf="password.errors['required']">Password is required</div>
+                    <div *ngIf="password.errors['minlength']">
+                        Password must be at least 6 characters
+                    </div>
+                    <div *ngIf="password.errors['maxlength']">
+                        Username must not exceed 40 characters
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" class="form-control" name="confirmPassword" id="confirmPassword"
+                    placeholder="Enter confirm password" [(ngModel)]="form.confirmPassword" required
+                    #confirmPassword="ngModel" [ngClass]="{ 'is-invalid': f.submitted && confirmPassword.errors }">
+                <div *ngIf="f.submitted && confirmPassword.errors" class="invalid-feedback">
+                    <div *ngIf="confirmPassword.errors['required']">
+                        Confirm Password is required
+                    </div>
+                    <div *ngIf="confirmPassword.errors['matching']">
+                        Confirm Password does not match
+                    </div>
+                </div>
+            </div>
+            <div class="form-group form-check mb-3">
+                <input type="checkbox" lass="form-control" name="acceptTerms" [(ngModel)]="form.acceptTerms"
+                    class="form-check-input" required #acceptTerms="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && acceptTerms.errors }" />
+                <label for="acceptTerms" class="form-check-label">
+                    I have read and agree to the Terms
+                </label>
+                <div *ngIf="f.submitted && acceptTerms.errors" class="invalid-feedback">
+                    Accept Terms is required
+                </div>
+            </div>
+            <p>Already have an account? <span class="clickBtn" (click)="Login()">Click Here to Login</span> </p>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </ng-container>
+    <ng-container *ngIf="!ShowSignUp">
+        <h1 class="text-center my-3">User Login</h1>
+        <form class="form-horizontal">
+            <div class="form-group mb-3">
+                <label for="email">Enter Email address</label>
+                <input type="email" name="email" class="form-control" id="email" placeholder="Enter email">
+            </div>
+            <div class="form-group mb-3">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="password" id="password"
+                    placeholder="Enter password">
+            </div>
+            <p>Don't have an account? <span class="clickBtn" (click)="Register()">Click Here to Register</span> </p>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </ng-container>
+</div>
