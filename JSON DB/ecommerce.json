@@ -96,6 +96,15 @@
       "confirmPassword": "123456",
       "acceptTerms": true,
       "id": 5
+    },
+    {
+      "name": "user2",
+      "email": "dsl@gmail.com",
+      "phone": "+8801952023",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "acceptTerms": true,
+      "id": 6
     }
   ]
 }
