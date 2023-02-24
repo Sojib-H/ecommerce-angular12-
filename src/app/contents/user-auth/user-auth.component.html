@@ -77,18 +77,26 @@
     </ng-container>
     <ng-container *ngIf="!ShowSignUp">
         <h1 class="text-center my-3">User Login</h1>
-        <form class="form-horizontal">
+        <div *ngIf="authError" class="alert alert-danger form-horizontal mb-3" role="alert">
+            {{authError}}
+        </div>
+        <form class="form-horizontal" #loginForm="ngForm" (ngSubmit)="userLogin(loginForm.value)">
             <div class="form-group mb-3">
                 <label for="email">Enter Email address</label>
-                <input type="email" name="email" class="form-control" id="email" placeholder="Enter email">
+                <input type="email" name="email" class="form-control" id="email" placeholder="Enter email" ngModel
+                    #email="ngModel" required email>
+                <p class="text-danger mt-2"><span *ngIf="email.invalid && email.touched">Please inter valid email</span>
+                </p>
             </div>
             <div class="form-group mb-3">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" name="password" id="password"
-                    placeholder="Enter password">
+                <input type="password" class="form-control" name="password" id="password" placeholder="Enter password"
+                    ngModel #password="ngModel" required minlength="3" maxlength="10">
+                <p class="text-danger mt-2"><span *ngIf="password.invalid && password.touched">Please inter valid
+                        email</span></p>
             </div>
             <p>Don't have an account? <span class="clickBtn" (click)="Register()">Click Here to Register</span> </p>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">Login</button>
         </form>
     </ng-container>
 </div>

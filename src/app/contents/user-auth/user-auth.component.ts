@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { login } from 'src/app/interface/data-type';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -8,7 +9,8 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UserAuthComponent implements OnInit {
 
-  ShowSignUp = true;
+  ShowSignUp = false;
+  authError:string='';
   constructor(private userService: UserService) { }
   ngOnInit(): void {
     this.userService.userReload();
@@ -33,6 +35,15 @@ export class UserAuthComponent implements OnInit {
   }
   Register() {
     this.ShowSignUp = true;
+  }
+
+  userLogin(val:login){
+    this.userService.userLogin(val);
+    this.userService.invalidUserAuth.subscribe((result)=>{
+      if(result){
+        this.authError="Please enter valid user credentials"; 
+      }
+    })
   }
 
 }

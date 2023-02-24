@@ -62,49 +62,13 @@
       "id": 1
     },
     {
-      "name": "user2",
-      "email": "dsl@gmail.com",
+      "name": "Sojib",
+      "email": "yewek39641@quamox.com",
       "phone": "+8801952023",
-      "password": "123456",
-      "confirmPassword": "123456",
+      "password": "1234567",
+      "confirmPassword": "1234567",
       "acceptTerms": true,
       "id": 2
-    },
-    {
-      "name": "user2",
-      "email": "dsl@gmail.com",
-      "phone": "+8801952023",
-      "password": "123456",
-      "confirmPassword": "123456",
-      "acceptTerms": true,
-      "id": 3
-    },
-    {
-      "name": "user2",
-      "email": "dsl@gmail.com",
-      "phone": "+8801952023",
-      "password": "123456",
-      "confirmPassword": "123456",
-      "acceptTerms": true,
-      "id": 4
-    },
-    {
-      "name": "user2",
-      "email": "dsl@gmail.com",
-      "phone": "+8801952023",
-      "password": "123456",
-      "confirmPassword": "123456",
-      "acceptTerms": true,
-      "id": 5
-    },
-    {
-      "name": "user2",
-      "email": "dsl@gmail.com",
-      "phone": "+8801952023",
-      "password": "123456",
-      "confirmPassword": "123456",
-      "acceptTerms": true,
-      "id": 6
     }
   ]
 }

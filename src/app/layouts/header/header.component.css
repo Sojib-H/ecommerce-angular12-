@@ -7,3 +7,6 @@
 .list-group-item{
     cursor: pointer;
 }
+a{
+    cursor: pointer;
+}

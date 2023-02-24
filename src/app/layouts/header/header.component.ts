@@ -29,9 +29,9 @@ export class HeaderComponent implements OnInit {
           this.menuType = 'user';
           if (localStorage.getItem('user')) {
             let userStore = localStorage.getItem('user');
-            console.log(userStore)
+            // console.log(userStore)
             let userData = userStore && JSON.parse(userStore)[0];
-            // console.log(userData)
+            console.log(userData)
             // this.userName = userData.name;
             console.log(this.userName)
           }
@@ -48,7 +48,7 @@ export class HeaderComponent implements OnInit {
   }
   UserLogOut() {
     localStorage.removeItem('user');
-    this.router.navigate(['/']);
+    this.router.navigate(['/user-auth']);
   }
 
   searchProduct(e: KeyboardEvent) {
