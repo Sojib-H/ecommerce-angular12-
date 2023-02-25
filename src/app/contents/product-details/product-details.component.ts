@@ -15,13 +15,24 @@ export class ProductDetailsComponent implements OnInit {
 
   ShowSignUp = true;
   productData: undefined | product;
-  productQty:number=1;
+  productQty: number = 1;
+  removeCart = false;
   constructor(private productService: ProductService, private route: ActivatedRoute, private modalService: NgbModal) { }
 
   ngOnInit(): void {
     let productId = this.route.snapshot.paramMap.get('productId');
     productId && this.productService.getProduct(productId).subscribe((result) => {
       this.productData = result;
+      let cartData = localStorage.getItem('localCart');
+      if (productId && cartData) {
+        let items = JSON.parse(cartData);
+        items = items.filter((item: product) => productId == item.id.toString());
+        if (items.length) {
+          this.removeCart = true;
+        } else {
+          this.removeCart = false;
+        }
+      }
     })
   }
 
@@ -53,12 +64,24 @@ export class ProductDetailsComponent implements OnInit {
     form.reset();
   }
 
-  handleQty(val:string){
-    if(this.productQty<20 && val==='plus'){
-      this.productQty+=1;
-    }else if(this.productQty > 1 && val==='min'){
-      this.productQty-=1;
+  handleQty(val: string) {
+    if (this.productQty < 20 && val === 'plus') {
+      this.productQty += 1;
+    } else if (this.productQty > 1 && val === 'min') {
+      this.productQty -= 1;
     }
+  }
 
+  AddToCart() {
+    if (this.productData) {
+      this.productData.quantity = this.productQty;
+      this.productService.localAddToCart(this.productData);
+      this.removeCart = true;
+    }
+  }
+
+  RemoveCart(productId:number) {
+    this.productService.removeCart(productId);
+    this.removeCart = false;
   }
 }
