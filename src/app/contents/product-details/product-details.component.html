@@ -16,8 +16,11 @@
                 <p>Category : {{productData.category | titlecase}}</p>
                 <p>{{productData.description}}</p>
                 <div class="productBtn mb-3">
-                    <button class="btn btn-primary addToCart" (click)="openVerticallyCentered(content)">
+                    <button *ngIf="!removeCart" class="btn btn-primary addToCart" (click)="AddToCart()">
                         Add to Cart
+                    </button>
+                    <button *ngIf="removeCart" class="btn btn-primary addToCart" (click)="RemoveCart(productData.id)">
+                        Remove Cart
                     </button>
                     <button class="btn btn-primary buyNow">Buy Now</button>
                 </div>

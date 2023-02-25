@@ -1,30 +1,30 @@
-.productImg img{
+.productImg img {
     height: 350px;
 }
 
-.productContent p{
+.productContent p {
     line-height: 10px;
 }
 
-.productBtn .addToCart{
+.productBtn .addToCart {
     margin-right: 40px;
 }
 
-.productBtn .btn{
-    width: 110px;
+.productBtn .btn {
+    width: 120px;
 }
 
-.quantity-group input{
-    width: 215px;
+.quantity-group input {
+    width: 230px;
 }
 
-.clickBtn:hover{
+.clickBtn:hover {
     cursor: pointer;
-    color:blue;
+    color: blue;
 }
 
 @media (max-width: 767px) {
-   .productContent {
-            text-align: center;
-     } 
-  }
+    .productContent {
+        text-align: center;
+    }
+}
