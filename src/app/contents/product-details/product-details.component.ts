@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { product } from 'src/app/interface/data-type';
+import { cart, product } from 'src/app/interface/data-type';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -57,7 +57,7 @@ export class ProductDetailsComponent implements OnInit {
   };
 
   onSubmit(): void {
-    console.log(JSON.stringify(this.form, null, 2));
+    // console.log(JSON.stringify(this.form, null, 2));
   }
 
   onReset(form: NgForm): void {
@@ -75,12 +75,29 @@ export class ProductDetailsComponent implements OnInit {
   AddToCart() {
     if (this.productData) {
       this.productData.quantity = this.productQty;
-      this.productService.localAddToCart(this.productData);
-      this.removeCart = true;
+      if (!localStorage.getItem('user')) {
+        this.productService.localAddToCart(this.productData);
+        this.removeCart = true;
+      } else {
+        let user = localStorage.getItem('user');
+        let userId = user && JSON.parse(user).id;
+        let cartData: cart = {
+          ...this.productData,
+          userId,
+          productId: this.productData.id,
+        }
+        delete cartData.id;
+        this.productService.addToCart(cartData).subscribe((result) => {
+          if (result) {
+            console.log('Success')
+          }
+        })
+        this.removeCart = true;
+      }
     }
   }
 
-  RemoveCart(productId:number) {
+  RemoveCart(productId: number) {
     this.productService.removeCart(productId);
     this.removeCart = false;
   }

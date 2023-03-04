@@ -21,23 +21,19 @@ export class HeaderComponent implements OnInit {
     this.router.events.subscribe((val: any) => {
       if (val.url) {
         if (localStorage.getItem('seller')) {
+          let sellerStore = localStorage.getItem('seller');
+          let sellerData = sellerStore && JSON.parse(sellerStore)[0];
+          this.sellerName = sellerData.name;
           this.menuType = 'seller';
-          if (localStorage.getItem('seller')) {
-            let sellerStore = localStorage.getItem('seller');
-            let sellerData = sellerStore && JSON.parse(sellerStore)[0];
-            this.sellerName = sellerData.name;
-          }
-        } else if (localStorage.getItem('user')) {
+
+        }
+        else if (localStorage.getItem('user')) {
+          let userStore = localStorage.getItem('user');
+          let userData = userStore && JSON.parse(userStore);
+          this.userName = userData.name;
           this.menuType = 'user';
-          if (localStorage.getItem('user')) {
-            let userStore = localStorage.getItem('user');
-            // console.log(userStore)
-            let userData = userStore && JSON.parse(userStore)[0];
-            console.log(userData)
-            // this.userName = userData.name;
-            console.log(this.userName)
-          }
-        } else {
+        }
+        else {
           this.menuType = 'default';
         }
       }
