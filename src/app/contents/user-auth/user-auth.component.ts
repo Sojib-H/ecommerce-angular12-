@@ -44,7 +44,9 @@ export class UserAuthComponent implements OnInit {
       if (result) {
         this.authError = "Please enter valid user credentials";
       } else {
-        this.localCartToRemoteCart();
+        setTimeout(() => {
+          this.localCartToRemoteCart();
+        }, 600);
       }
     })
   }
@@ -52,8 +54,7 @@ export class UserAuthComponent implements OnInit {
   localCartToRemoteCart() {
     let data = localStorage.getItem('localCart');
     let user = localStorage.getItem('user');
-    let userId = user && JSON.parse(user);
-    console.log(user)
+    let userId = user && JSON.parse(user).id;
     if (data) {
       let cartDataList: product[] = JSON.parse(data);
       cartDataList.forEach((product: product, index) => {
@@ -78,7 +79,7 @@ export class UserAuthComponent implements OnInit {
 
     setTimeout(() => {
       this.productService.getCartList(userId);
-    }, 2000);
+    }, 700);
   }
 
 }

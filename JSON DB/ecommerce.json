@@ -1,6 +1,5 @@
 {
-  "seller": [
-  ],
+  "seller": [],
   "products": [
     {
       "name": "iphone 12",
@@ -40,7 +39,9 @@
     }
   ],
   "users": [
+    
   ],
   "cart": [
+    
   ]
 }
